@@ -4,7 +4,7 @@ export const getChartData = async (selectedMonth) => {
     const authToken = sessionStorage.getItem('auth_token');
     try {
       // Fetch data from your API
-      const response = await axios.get(`http://localhost:5000/api/combined-statistics?month=${selectedMonth}`);
+      const response = await axios.get(`https://sah-server.onrender.com/api/combined-statistics?month=${selectedMonth}`);
       
       if (response.data) {
         return response.data;
