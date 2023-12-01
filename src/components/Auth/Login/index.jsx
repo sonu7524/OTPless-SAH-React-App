@@ -13,18 +13,14 @@ const Login = () => {
 
     useEffect(() => {
       window.otpless = (otplessUser) => {
-        alert(JSON.stringify(otplessUser));
-        if (otplessUser) {
-          sessionStorage.setItem("auth_token", otplessUser.token);
-          sessionStorage.setItem("username", otplessUser.mobile.name);
-          sessionStorage.setItem("email", otplessUser.email.email);
-          window.location.href = "/dashboard";
-        }
+       alert(JSON.stringify(otplessUser));
       };
      }, []);
+                
               
     return (
         <div className="login">
+          <div id="otpless-login-page"></div>
         </div>
     )
 }
