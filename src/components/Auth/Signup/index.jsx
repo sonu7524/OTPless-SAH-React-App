@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function Signup() {
+    const navigate = useNavigate();
     useEffect(() => {
         // Initialize OTPless when the component mounts
         const script = document.createElement('script');
@@ -16,7 +18,7 @@ function Signup() {
             sessionStorage.setItem("username", otplessUser.email.name || otplessUser.mobile.name);
             sessionStorage.setItem("email", otplessUser.email.email);
             sessionStorage.setItem("mobile", "+"+otplessUser.mobile.number);
-            window.location.href = "/dashboard";
+            navigate("/dashboard");
           }
         };
         // Clean up the script when the component unmounts

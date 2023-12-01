@@ -3,15 +3,17 @@ import homeImg from "../../assets/home.jpg";
 import "./styles.css";
 import DirectionsRunRoundedIcon from '@mui/icons-material/DirectionsRunRounded';
 import ButtonComponent from "../common/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+    const navigate = useNavigate();
     const handleClick = () => {
         const authToken = sessionStorage.getItem("auth_token");
         if(authToken){
-            window.location.href = "/dashboard";
+            navigate("/dashboard");
         }
         else{
-            window.location.href = "/login";
+            navigate("/login");
         }
     }
     return (
