@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ButtonComponent from "../../common/Button";
-import Loader from "../../common/Loader";
 import "./styles.css";
 import { useProductContext } from "../../../ProductContext";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { searchProd } from "../../../functions/searchProd";
 import { getProdByMonth } from "../../../functions/getProdByMonth";
-import { getAllProd } from "../../../functions/getAllProd";
 import DropDownComponent from "../../common/DropDown";
 import TabComponent from "../Tabs";
 
