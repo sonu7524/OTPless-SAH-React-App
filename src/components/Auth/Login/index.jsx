@@ -11,13 +11,12 @@ const Login = () => {
         document.getElementById('otpless-login-page').appendChild(script);
 
         window.otpless = (otplessUser) => {
-          console.log(otplessUser);
           // Store user object in local storage
           if(otplessUser){
             otplessUser.token && sessionStorage.setItem("auth_token", otplessUser.token);
             sessionStorage.setItem("username", otplessUser.email.name || otplessUser.mobile.name);
             sessionStorage.setItem("email", otplessUser.email.email);
-            sessionStorage.setItem("mobile", otplessUser.mobile.mobile);
+            sessionStorage.setItem("mobile", "+"+otplessUser.mobile.number);
             window.location.href = "/dashboard";
           }
         };
@@ -29,7 +28,7 @@ const Login = () => {
                        
     return (
         <div className="login">
-          <div id="otpless-login-page"></div>
+          <div id="otpless-login-page"/>
         </div>
     )
 }
