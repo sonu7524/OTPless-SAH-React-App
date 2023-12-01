@@ -10,7 +10,7 @@ export default function Header() {
     const authToken = sessionStorage.getItem("auth_token");
     const handleLogout = () => {
         sessionStorage.removeItem("auth_token");
-        window.location.href = "/login";
+        window.location.href = "/";
     }
 
     const isloginMenu =     <div className="login-menu">

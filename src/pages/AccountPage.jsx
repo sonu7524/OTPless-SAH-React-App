@@ -7,9 +7,9 @@ export default function AccountPage() {
 
     useEffect(() => {
         const username = sessionStorage.getItem("username");
-        const email = sessionStorage.getItem("email");
-        const userId = sessionStorage.getItem("user_id");
-        setUser({username,email,userId});
+        const email = sessionStorage.getItem("email") === "undefined" ? "N/A" : sessionStorage.getItem("email");;
+        const phone = sessionStorage.getItem("mobile") === "undefined" ? "N/A" : sessionStorage.getItem("mobile");
+        setUser({username,email,phone});
     }, []);
     return (
         <div>
@@ -21,9 +21,11 @@ export default function AccountPage() {
                         <img style={{width: "10rem", height: "10rem"}} src={accountImg} alt="account" />
                     </div>
                     <div className="account-details">
-                        <h4>User-ID: {user.userId}</h4>
                         <p>Name: {user.username}</p>
                         <p>Email: {user.email}</p>
+                        <p>Phone: {user.phone}</p>
+                        <p>Role: User</p>
+                        <p>Status: <b style={{color: "green"}}>Active</b></p>
                     </div>
                 </div>
             </div>
