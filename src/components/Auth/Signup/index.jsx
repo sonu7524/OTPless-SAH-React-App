@@ -18,7 +18,7 @@ function Signup() {
             sessionStorage.setItem("username", otplessUser.email.name || otplessUser.mobile.name);
             sessionStorage.setItem("email", otplessUser.email.email);
             sessionStorage.setItem("mobile", "+"+otplessUser.mobile.number);
-            navigate("/dashboard");
+            window.location.href = "/dashboard";
           }
         };
         // Clean up the script when the component unmounts
